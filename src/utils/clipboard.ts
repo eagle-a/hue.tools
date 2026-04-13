@@ -25,7 +25,7 @@ export const copyToClipboard = (
  * @param event The native MouseEvent
  * @param message The text to show
  */
-const showFloatingTooltip = (event: MouseEvent, message = 'Copied!') => {
+const showFloatingTooltip = (event: MouseEvent, message = '已复制！') => {
   const el = document.createElement('div')
 
   el.style.position = 'fixed'

@@ -69,7 +69,7 @@
         {showNameOnHover ? '!opacity-0 group-hover:!opacity-100' : ''}
       "
       style="color: {textColor};"
-      on:click={(e) => copyToClipboard(e, colorName, 'Name copied!')}
+      on:click={(e) => copyToClipboard(e, colorName, '已复制名称！')}
     >
       {colorName}
     </div>

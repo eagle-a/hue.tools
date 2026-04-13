@@ -120,7 +120,7 @@
   <div
     class="absolute top-4 text-lg font-medium opacity-80 transition-opacity hover:opacity-100 left-1/2 transform -translate-x-1/2 text-center"
     style="color: {textColor};"
-    on:click={(e) => copyToClipboard(e, colorName, 'Name copied!')}
+    on:click={(e) => copyToClipboard(e, colorName, '已复制名称！')}
   >
     {colorName}
   </div>
@@ -179,9 +179,9 @@
     -->
     {#if isValidColor}
       <button
-        on:click={(e) => copyToClipboard(e, formattedColorValue, 'Copied!')}
+        on:click={(e) => copyToClipboard(e, formattedColorValue, '已复制！')}
         class="transition text-white opacity-60 hover:opacity-100 absolute left-[18px] bottom-[11px]"
-        title="Copy"
+        title="复制"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +199,7 @@
         </svg>
       </button>
     {:else}
-      <button class="absolute left-[18px] bottom-[11px]" title="Invalid color">
+      <button class="absolute left-[18px] bottom-[11px]" title="无效颜色">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"

@@ -7,7 +7,7 @@
 
   $primaryColor = Color.random()
 
-  const tools = ['mix', 'info', 'blend', 'modify']
+  const tools = [{ id: 'mix', label: '混合' }, { id: 'info', label: '信息' }, { id: 'blend', label: '叠加' }, { id: 'modify', label: '调整' }]
 
   const handleMouseEnter = (e) => {
     $primaryColor = Color.random()
@@ -28,7 +28,7 @@
     class="absolute top-0 left-1/2 -translate-x-1/2"
     ><img
       src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=331426&theme=light"
-      alt="hue.tools - Intuitive open source toolbox for colors. | Product Hunt"
+      alt="hue.tools - 直观的开源颜色工具箱。 | Product Hunt"
       style="width: 250px; height: 54px;"
       width="250"
       height="54"
@@ -41,11 +41,11 @@
       hue.tools
     </h1>
     <p class="text-base sm:text-xl dark:text-gray-400 text-gray-500">
-      An <a
+      一个<a
         href="https://github.com/pabueco/hue.tools"
         class="dark:text-gray-300 text-gray-800 hover:text-primary-clamped transition"
-        target="_blank">open source</a
-      > toolbox for colors.
+        target="_blank">开源</a
+      >颜色工具箱。
     </p>
   </div>
 
@@ -54,12 +54,12 @@
   >
     {#each tools as tool}
       <a
-        href={'/' + tool}
-        class="transition transform hover:-translate-y-1 bg-white dark:bg-transparent border dark:border-gray-700/60 border-gray-300 shadow dark:shadow-black/50 rounded-lg hover:!bg-primary hover:!text-primary-text hover:!border-primary hover:shadow-xl dark:hover:shadow-black/30 uppercase px-8 py-4 text-center"
+        href={'/' + tool.id}
+        class="transition transform hover:-translate-y-1 bg-white dark:bg-transparent border dark:border-gray-700/60 border-gray-300 shadow dark:shadow-black/50 rounded-lg hover:!bg-primary hover:!text-primary-text hover:!border-primary hover:shadow-xl dark:hover:shadow-black/30 px-8 py-4 text-center"
         on:mouseenter={handleMouseEnter}
       >
         <span class="font-semibold text-base sm:text-lg tracking-widest"
-          >{tool}</span
+          >{tool.label}</span
         >
       </a>
     {/each}

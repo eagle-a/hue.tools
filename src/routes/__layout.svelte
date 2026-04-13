@@ -111,7 +111,7 @@
             <button
               on:click={() => randomize()}
               class="ml-5 hover:text-primary-clamped transition hover:animate-spin-reverse"
-              title="Randomize colors"
+              title="随机颜色"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@
             <button
               on:click={(e) => copyToClipboard(e, window.location.href)}
               class="ml-5 hover:text-primary-clamped transition"
-              title="Copy current link to clipboard"
+              title="复制当前链接"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@
             <button
               on:click={toggleColorMode}
               class="ml-5 hover:text-primary-clamped transition"
-              title="Copy current link to clipboard"
+              title="切换深色/浅色模式"
             >
               {#if $isDarkMode}
                 <svg
@@ -188,7 +188,7 @@
           </div>
 
           <div class="flex items-center">
-            <label for="" class="mr-3 hidden md:block">Output format:</label>
+            <label for="" class="mr-3 hidden md:block">输出格式：</label>
             <select
               bind:value={$outputFormat}
               class="dark:bg-gray-700 bg-gray-200 transition dark:hover:bg-gray-600 focus:outline-none px-2 py-1 rounded-md cursor-pointer"
@@ -213,24 +213,24 @@
           <a
             href={'/mix' + generalQueryString}
             class={$page.url.pathname === '/mix' ? 'text-primary-clamped' : ''}
-            >Mix</a
+            >混合</a
           >
           <a
             href={'/info' + generalQueryString}
             class={$page.url.pathname === '/info' ? 'text-primary-clamped' : ''}
-            >Info</a
+            >信息</a
           >
           <a
             href={'/blend' + generalQueryString}
             class={$page.url.pathname === '/blend'
               ? 'text-primary-clamped'
-              : ''}>Blend</a
+              : ''}>叠加</a
           >
           <a
             href={'/modify' + generalQueryString}
             class={$page.url.pathname === '/modify'
               ? 'text-primary-clamped'
-              : ''}>Modify</a
+              : ''}>调整</a
           >
         </div>
       </div>
@@ -252,7 +252,7 @@
         href="https://vercel.com/?utm_source=pabueco&utm_campaign=oss"
         target="_blank"
       >
-        <img src="/powered-by-vercel.svg" alt="Powered by Vercel" class="h-9" />
+        <img src="/powered-by-vercel.svg" alt="由 Vercel 提供支持" class="h-9" />
       </a>
     </div>
     <a href="https://github.com/pabueco/hue.tools" target="_blank">
@@ -272,7 +272,7 @@
       </svg>
     </a>
     <div>
-      <span>Made by</span>
+      <span>作者</span>
       <a href="https://pabue.co" target="_blank" class="border-b border-current"
         >pabue.co</a
       >

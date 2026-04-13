@@ -53,34 +53,34 @@
 
   $: colorCombinations = [
     {
-      label: 'Analogous',
+      label: '相似色',
       colors: combiAnalogous,
     },
     {
-      label: 'Monochromatic',
+      label: '单色系',
       colors: combiMonochromatic,
     },
     {
-      label: 'Splitcomponent',
+      label: '裂色调和',
       colors: combiSplitcomplement,
     },
     {
-      label: 'Triad',
+      label: '三色组合',
       colors: combiTriad,
     },
     {
-      label: 'Tetrad',
+      label: '四色组合',
       colors: combiTetrad,
     },
     {
-      label: 'Polyad',
+      label: '多色组合',
       colors: combiPolyad,
     },
   ]
 </script>
 
 <svelte:head>
-  <title>hue.tools – info</title>
+  <title>hue.tools – 信息</title>
 </svelte:head>
 
 <div class="flex flex-col items-center">
@@ -97,7 +97,7 @@
       </div>
       <div class="flex-1 flex gap-8 md:gap-6 flex-col sm:flex-row">
         <div class="text-lg flex-1">
-          <Fieldset label="Color Spaces">
+          <Fieldset label="色彩空间">
             <ColorSpace label="HEX" value={colorInstance.chroma.hex()} />
             <ColorSpace
               label="RGB"
@@ -109,24 +109,24 @@
             <ColorSpace label="LCH" value={colorInstance.chroma.lch()} />
             <ColorSpace label="LAB" value={colorInstance.chroma.lab()} />
             <ColorSpace
-              label="Numeric RGB"
+              label="数字 RGB"
               value={colorInstance.chroma.num()}
             />
             <ColorSpace
-              label="Temperature"
+              label="色温"
               value={colorInstance.chroma.temperature()}
             />
             <ColorSpace label="GL" value={colorInstance.chroma.gl()} />
           </Fieldset>
         </div>
         <div class="flex-1 flex flex-col gap-8">
-          <Fieldset label="CSS Values">
+          <Fieldset label="CSS 值">
             <ColorSpace
               label="RGB"
               value={new TinyColor(colorInstance.hex()).toString('rgb')}
             />
             <ColorSpace
-              label="Percent RGB"
+              label="百分比 RGB"
               value={new TinyColor(colorInstance.hex()).toString('prgb')}
             />
             <ColorSpace
@@ -140,7 +140,7 @@
           </Fieldset>
 
           <div class="">
-            <Fieldset label="Inspiration">
+            <Fieldset label="设计灵感">
               <div class="flex flex-col space-y-3">
                 <a
                   class="text-lg flex items-center transition hover:text-primary-clamped"
@@ -185,7 +185,7 @@
           </div>
 
           <div class="flex-1">
-            <Fieldset label="Images" className="h-full">
+            <Fieldset label="图片素材" className="h-full">
               <div class="flex flex-col space-y-3">
                 <a
                   class="text-lg flex items-center transition hover:text-primary-clamped"
@@ -213,7 +213,7 @@
                     class="w-5 mr-2.5 rounded"
                     alt=""
                   />
-                  TinEye Search Engine
+                  TinEye 图片搜索
                 </a>
               </div>
             </Fieldset>
@@ -223,7 +223,7 @@
     </div>
 
     <div class="mt-14 w-full">
-      <Fieldset label="Complementary Color">
+      <Fieldset label="互补色">
         <div class="flex space-x-2">
           <ColorBlock
             color={colorComplement}
@@ -238,7 +238,7 @@
     </div>
 
     <div class="mt-12 w-full">
-      <Fieldset label="Color Combinations">
+      <Fieldset label="配色方案">
         <div
           class="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:flex xl:gap-5"
         >
@@ -256,9 +256,9 @@
                       combination.colors
                         .map((c) => c.toString($outputFormat))
                         .join('\n'),
-                      'Colors copied!'
+                      '已复制颜色！'
                     )}
-                  title="Copy colors"
+                  title="复制颜色"
                   class="opacity-40 transition hover:text-primary-clamped hover:opacity-100 ml-5"
                 >
                   <svg

@@ -7,22 +7,22 @@
   import * as blend from 'color-blend'
 
   let modes = [
-    { id: 'normal', name: 'normal' },
-    { id: 'multiply', name: 'multiply' },
-    { id: 'screen', name: 'screen' },
-    { id: 'overlay', name: 'overlay' },
-    { id: 'darken', name: 'darken' },
-    { id: 'lighten', name: 'lighten' },
-    { id: 'colorDodge', name: 'color dodge' },
-    { id: 'colorBurn', name: 'color burn' },
-    { id: 'hardLight', name: 'hard light' },
-    { id: 'softLight', name: 'soft light' },
-    { id: 'difference', name: 'difference' },
-    { id: 'exclusion', name: 'exclusion' },
-    { id: 'hue', name: 'hue' },
-    { id: 'saturation', name: 'saturation' },
-    { id: 'color', name: 'color' },
-    { id: 'luminosity', name: 'luminosity' },
+    { id: 'normal', name: '正常' },
+    { id: 'multiply', name: '正片叠加' },
+    { id: 'screen', name: '滤色' },
+    { id: 'overlay', name: '叠加' },
+    { id: 'darken', name: '变暗' },
+    { id: 'lighten', name: '变亮' },
+    { id: 'colorDodge', name: '颜色减淡' },
+    { id: 'colorBurn', name: '颜色加深' },
+    { id: 'hardLight', name: '强光' },
+    { id: 'softLight', name: '柔光' },
+    { id: 'difference', name: '差値' },
+    { id: 'exclusion', name: '排除' },
+    { id: 'hue', name: '色相' },
+    { id: 'saturation', name: '饱和度' },
+    { id: 'color', name: '颜色' },
+    { id: 'luminosity', name: '亮度' },
   ]
 
   let mode = getQueryParam('mode', 'normal')
@@ -60,7 +60,7 @@
 </script>
 
 <svelte:head>
-  <title>hue.tools – blend</title>
+  <title>hue.tools – 叠加</title>
 </svelte:head>
 
 <div class="flex-1 container mx-auto flex flex-col">
@@ -68,7 +68,7 @@
     class="flex flex-col 2xl:flex-row space-y-10 2xl:space-y-0 2xl:space-x-10"
   >
     <div class="flex flex-col">
-      <h2 class="font-bold text-2xl mb-6">Your colors</h2>
+      <h2 class="font-bold text-2xl mb-6">你的颜色</h2>
       <div
         class="flex flex-col lg:flex-row space-y-5 lg:space-x-5 lg:space-y-0 flex-1 2xl:flex-col 2xl:space-x-0 2xl:space-y-5"
       >
@@ -86,7 +86,7 @@
     </div>
 
     <div class="flex-1">
-      <h2 class="font-bold text-2xl mb-6">Blend modes</h2>
+      <h2 class="font-bold text-2xl mb-6">叠加模式</h2>
       <div
         class="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4"
       >
@@ -105,7 +105,7 @@
             >
               <a
                 on:click|stopPropagation={() => {}}
-                title="View color info"
+                title="查看颜色信息"
                 href="/info?color={blendResult.color
                   .toString('hex8')
                   .replace('#', '')}"

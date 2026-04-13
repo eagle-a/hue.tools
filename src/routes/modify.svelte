@@ -66,12 +66,12 @@
 </script>
 
 <svelte:head>
-  <title>hue.tools – modify</title>
+  <title>hue.tools – 调整</title>
 </svelte:head>
 
 <div class="flex flex-col xl:grid grid-cols-4 gap-10 container mx-auto">
   <div class="flex flex-col order-1">
-    <h2 class="font-bold text-2xl mb-6">Your colors</h2>
+    <h2 class="font-bold text-2xl mb-6">你的颜色</h2>
     <ColorCard
       deletable={false}
       {initialFormat}
@@ -81,63 +81,63 @@
   </div>
 
   <div class="col-span-2 my-10 xl:my-0 order-last xl:order-2">
-    <h2 class="font-bold text-2xl mb-6">Modifiers</h2>
+    <h2 class="font-bold text-2xl mb-6">调整选项</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 gap-y-8">
       <Modifier
-        name="Brighten"
+        name="提亮"
         bind:value={modifiers.brighten}
         on:change={onChange}
       >
-        <div slot="description">Increase the brightness</div>
+        <div slot="description">增加亮度</div>
       </Modifier>
       <Modifier
-        name="Darken"
+        name="加暗"
         bind:value={modifiers.darken}
         on:change={onChange}
       >
-        <div slot="description">Decrease the brightness</div>
+        <div slot="description">减少亮度</div>
       </Modifier>
-      <Modifier name="Tint" bind:value={modifiers.tint} on:change={onChange}>
-        <div slot="description">Mix with pure white</div>
+      <Modifier name="色调" bind:value={modifiers.tint} on:change={onChange}>
+        <div slot="description">与纯白混合</div>
       </Modifier>
-      <Modifier name="Shade" bind:value={modifiers.shade} on:change={onChange}>
-        <div slot="description">Mix with pure black</div>
+      <Modifier name="阴影" bind:value={modifiers.shade} on:change={onChange}>
+        <div slot="description">与纯黑混合</div>
       </Modifier>
       <Modifier
-        name="Desaturate"
+        name="降饱和"
         bind:value={modifiers.desaturate}
         on:change={onChange}
       >
-        <div slot="description">Decrease the saturation</div>
+        <div slot="description">减少饱和度</div>
       </Modifier>
       <Modifier
-        name="Saturate"
+        name="加饱和"
         bind:value={modifiers.saturate}
         on:change={onChange}
       >
-        <div slot="description">Increase the saturation</div>
+        <div slot="description">增加饱和度</div>
       </Modifier>
       <Modifier
-        name="Lighten"
+        name="赋亮"
         bind:value={modifiers.lighten}
         on:change={onChange}
       >
-        <div slot="description">Increase the luminance</div>
+        <div slot="description">增加亮度（HSL）</div>
       </Modifier>
       <Modifier
-        name="Spin"
+        name="色相旋转"
         bind:value={modifiers.spin}
         on:change={onChange}
         sliderProps={{ range: { min: -360, max: 360 }, connect: false }}
         unit="°"
       >
-        <div slot="description">Spin the hue</div>
+        <div slot="description">旋转色相角度</div>
       </Modifier>
     </div>
   </div>
 
   <div class="flex flex-col order-3">
-    <h2 class="font-bold text-2xl mb-6">Result</h2>
+    <h2 class="font-bold text-2xl mb-6">结果</h2>
     <ColorBlock
       color={finalColor}
       expands

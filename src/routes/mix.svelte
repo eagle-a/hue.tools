@@ -129,14 +129,14 @@
 </script>
 
 <svelte:head>
-  <title>hue.tools – mix</title>
+  <title>hue.tools – 混合</title>
 </svelte:head>
 
 <div class="flex-1 container mx-auto max-w-6xl flex flex-col">
   <div class="flex flex-col lg:flex-row justify-center gap-12 flex-1">
     <div class="flex flex-col flex-1 order-1">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="font-bold text-2xl">Your colors</h2>
+        <h2 class="font-bold text-2xl">你的颜色</h2>
 
         <button
           on:click={addColor}
@@ -176,7 +176,7 @@
     <div class="flex flex-col flex-1 order-3 lg:order-2">
       <div class="flex items-center justify-between mb-6">
         <div class="flex items-center space-x-2">
-          <h2 class="font-bold text-2xl">Steps</h2>
+          <h2 class="font-bold text-2xl">渐变步数</h2>
         </div>
 
         <div class="flex items-center">
@@ -253,9 +253,9 @@
           </button>
 
           <button
-            on:click={(e) => copyToClipboard(e, colorList, 'Colors copied!')}
+            on:click={(e) => copyToClipboard(e, colorList, '已复制颜色！')}
             class="transition hover:text-primary-clamped ml-5"
-            title="Copy all shades/steps"
+            title="复制所有色阶"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +290,7 @@
     </div>
 
     <div class="flex flex-col flex-1 order-2 lg:order-3">
-      <h2 class="font-bold text-2xl mb-6">Mixed</h2>
+      <h2 class="font-bold text-2xl mb-6">混合结果</h2>
       <ColorBlock
         color={averageColor}
         expands
@@ -324,9 +324,9 @@
   </div>
 
   <div class="mt-16">
-    <Fieldset label="Settings">
+    <Fieldset label="设置">
       <div class="grid lg:grid-cols-2 gap-8">
-        <Field label="Interpolation Mode" hoverable={false}>
+        <Field label="插值模式" hoverable={false}>
           <div class="flex flex-wrap gap-x-3.5 md:gap-x-5 mt-2">
             {#each modes as type}
               <button
@@ -341,7 +341,7 @@
             {/each}
           </div>
         </Field>
-        <Field label="Gamma Correction" hoverable={false}>
+        <Field label="Gamma 校正" hoverable={false}>
           <div class="mt-4">
             <Slider
               bind:this={gammaSlider}
@@ -358,7 +358,7 @@
               <button
                 on:click={resetGamma}
                 class="transition dark:text-gray-500 text-gray-400 hover:text-primary-clamped"
-                title="Reset gamma"
+                title="重置 Gamma"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -387,9 +387,9 @@
   </div>
 
   <div class="mt-10">
-    <Fieldset label="CSS">
+    <Fieldset label="CSS 渐变">
       <ColorSpace
-        label="Linear Gradient"
+        label="线性渐变"
         value="linear-gradient(to bottom, {colorInstances
           .map((c) => c.hex())
           .join(', ')})"
